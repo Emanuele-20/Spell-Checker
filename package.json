@@ -1,0 +1,14 @@
+{
+  "name": "review1609",
+  "version": "1.0.0",
+  "description": "- Sentence, check if the words in a sentence are well spelled - Just string as input - The words to check will be inside an array",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.2.0"
+  }
+}

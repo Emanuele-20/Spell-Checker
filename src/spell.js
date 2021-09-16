@@ -6,21 +6,16 @@ class Spell {
 	spellChecker(sentence) {
 		let sentenceContainer = sentence.split(" ");
 		let checkedSentence = [];
+		const lowerCasedVocabulary = this.vocabulary.map((x) => x.toLowerCase());
 
 		sentenceContainer.forEach((word) => {
-			if (this.vocabulary.includes(word)) {
+			if (lowerCasedVocabulary.includes(word.toLowerCase())) {
 				checkedSentence.push(word);
 			} else {
 				checkedSentence.push(`~${word}~`);
 			}
 		});
-		console.log(checkedSentence.join(""));
-		return checkedSentence.join();
-		// if (this.vocabulary.includes(sentenceContainer)) {
-		// 	return sentence;
-		// } else {
-		// 	return `~${sentence}~`;
-		// }
+		return checkedSentence.join(" ");
 	}
 }
 

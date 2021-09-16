@@ -1,6 +1,14 @@
 class Spell {
+	constructor() {
+		this.vocabulary = ["Hi"];
+	}
+
 	spellChecker(sentence) {
-		return sentence;
+		if (this.vocabulary.includes(sentence)) {
+			return sentence;
+		} else {
+			return `~${sentence}~`;
+		}
 	}
 }
 

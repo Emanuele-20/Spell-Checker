@@ -4,18 +4,22 @@ class Spell {
 	}
 
 	spellChecker(sentence) {
-		let sentenceContainer = sentence.split(" ");
-		let checkedSentence = [];
-		const lowerCasedVocabulary = this.vocabulary.map((x) => x.toLowerCase());
+		if (typeof sentence === "string") {
+			let sentenceContainer = sentence.split(" ");
+			let checkedSentence = [];
+			const lowerCasedVocabulary = this.vocabulary.map((x) => x.toLowerCase());
 
-		sentenceContainer.forEach((word) => {
-			if (lowerCasedVocabulary.includes(word.toLowerCase())) {
-				checkedSentence.push(word);
-			} else {
-				checkedSentence.push(`~${word}~`);
-			}
-		});
-		return checkedSentence.join(" ");
+			sentenceContainer.forEach((word) => {
+				if (lowerCasedVocabulary.includes(word.toLowerCase())) {
+					checkedSentence.push(word);
+				} else {
+					checkedSentence.push(`~${word}~`);
+				}
+			});
+			return checkedSentence.join(" ");
+		} else {
+			throw new Error("You must provide a string");
+		}
 	}
 }
 
